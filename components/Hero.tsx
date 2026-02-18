@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] mb-5 md:mb-6">
-            Advogado Especialista em <span className="text-emerald-500 underline decoration-emerald-200 decoration-4">Plano de Saúde</span>
+            Advogado especialista em <span className="text-emerald-500 underline decoration-emerald-200 decoration-4">plano de saúde</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-600 mb-8 md:mb-10 leading-relaxed max-w-xl font-medium">
             Atuação estratégica contra negativas de cirurgias, medicamentos e tratamentos. Proteja seu direito à saúde com agilidade e transparência.
