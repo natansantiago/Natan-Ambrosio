@@ -14,6 +14,7 @@ import FinalRecap from './components/FinalRecap';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MobileStickyFooter from './components/MobileStickyFooter';
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 import ScrollReveal from './components/ScrollReveal';
 
 const App: React.FC = () => {
@@ -35,7 +36,7 @@ const App: React.FC = () => {
 
         <ScrollReveal animation="fade-up">
           <CriticalMoment />
-        </ScrollReveal>
+        </CriticalMoment>
 
         <StrategicSteps />
 
@@ -65,6 +66,7 @@ const App: React.FC = () => {
       </main>
       <Footer />
       <MobileStickyFooter />
+      <FloatingWhatsAppButton />
     </div>
   );
 };

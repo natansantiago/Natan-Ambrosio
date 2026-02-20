@@ -5,6 +5,7 @@ const WHATSAPP_LINK = "https://api.whatsapp.com/send/?phone=5512981616121&text&t
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,22 +24,30 @@ const Navbar: React.FC = () => {
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#home" className="flex items-center transition-transform hover:scale-105 active:scale-95">
-          <img 
-            src="Logo.png" 
-            alt="Natan Ambrosio Advocacia" 
-            className="h-12 md:h-16 w-auto object-contain"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-              const parent = e.currentTarget.parentElement;
-              if (parent) {
-                const div = document.createElement('div');
-                div.className = 'flex flex-col leading-tight';
-                div.innerHTML = '<span class="text-lg md:text-xl font-bold text-slate-900">Natan Ambrosio</span><span class="text-[8px] md:text-[10px] tracking-[0.3em] font-bold text-slate-400 uppercase">Advocacia</span>';
-                parent.appendChild(div);
-              }
-            }}
-          />
+        <a 
+          href="#home" 
+          className="flex items-center transition-transform hover:scale-105 active:scale-95 min-w-[150px] min-h-[48px] md:min-h-[64px]"
+        >
+          {!imgError ? (
+            <img 
+              src="Logo.png" 
+              alt="Natan Ambrosio Advocacia" 
+              className="h-12 md:h-16 w-auto object-contain"
+              onLoad={(e) => {
+                // Image loaded successfully
+              }}
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                Natan Ambrosio
+              </span>
+              <span className="text-[10px] md:text-xs tracking-[0.4em] font-bold text-slate-400 uppercase mt-0.5">
+                Advocacia
+              </span>
+            </div>
+          )}
         </a>
         
         <div className="flex items-center">
